@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.db.models.signals import pre_save
 from django.db import models
 from user.models import User
 from random import choices
@@ -19,10 +20,13 @@ class Link(models.Model):
             if not Link.objects.filter(shorten_url=new_link).exists():
                 break
         return new_link
-
+        
     def save(self,*args,**kwargs):
-        if not self.shorten_url:
-            new_link = self.shortener()
-            self.shorten_url=new_link
-        return super().save(*args,**kwargs)
+        super().save(*args,**kwargs)
+
+def link_pre_save(sender,instance,*args,**kwargs):
+    if not instance.shorten_url:
+        new_link = instance.shortener()
+        instance.shorten_url=new_link
+pre_save.connect(link_pre_save,sender=Link)
 
