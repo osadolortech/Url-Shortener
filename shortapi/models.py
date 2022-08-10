@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 from user.models import User
+from django.db.models.signals import pre_save
 from random import choices
 from string import ascii_letters
 
@@ -21,8 +22,11 @@ class Link(models.Model):
         return new_link
 
     def save(self,*args,**kwargs):
-        if not self.shorten_url:
-            new_link = self.shortener()
-            self.shorten_url=new_link
         return super().save(*args,**kwargs)
+
+def link_pre_save(instance,*args,**kwargs):
+    if not instance.shorten_url:
+        new_link = instance.shortener()
+        instance.shorten_url=new_link
+pre_save.connect(link_pre_save,sender=Link)
 
