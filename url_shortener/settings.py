@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'django.contrib.sites',
     'allauth',
+    'allauth.account',
     'dj_rest_auth.registration',
     'dj_rest_auth',
     'corsheaders',
