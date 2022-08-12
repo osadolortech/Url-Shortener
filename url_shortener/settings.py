@@ -79,6 +79,26 @@ MIDDLEWARE = [
 REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'user.serializers.RegisterSerializer',
 }
+REST_AUTH_SERIALIZERS = {
+    'USER_DETAILS_SERIALIZER': 'shortapi.serializers.CustomUserSerializer',
+
+}
+
+
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+   
+}
+
+REST_USE_JWT = True
+JWT_AUTH_COOKIE = 'my-app-auth' 
 
 ROOT_URLCONF = 'url_shortener.urls'
 
