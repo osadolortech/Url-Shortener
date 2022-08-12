@@ -13,10 +13,9 @@ class LinkSerializer(serializers.ModelSerializer):
 
 
 class CustomUserSerializer(serializers.ModelSerializer):
-    shorten_url = serializers.ReadOnlyField(read_only=True)
     class Meta:
         model=User
         fields = [
 
-                "id","name","email","shorten_url"
+                "id","name","email"
             ]
