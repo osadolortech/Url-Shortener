@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web gunicorn twitter_clonev2.wsgi:application --log-file -
+web gunicorn url_shortener.wsgi:application --log-file -
