@@ -168,8 +168,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 STATIC_URL = 'static/'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
 HOST_URL = 'http://127.0.0.1:8000'
 
 # Default primary key field type
