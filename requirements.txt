@@ -4,6 +4,7 @@ Django==4.1
 django-allauth==0.51.0
 django-cors-headers==3.13.0
 django-rest-authtoken==2.1.4
+django-restframework==0.0.1
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.2.0
 gunicorn==20.1.0
@@ -12,3 +13,4 @@ psycopg2==2.9.3
 pycparser==2.21
 python-decouple==3.6
 python-dotenv==0.20.0
+whitenoise==6.2.0
