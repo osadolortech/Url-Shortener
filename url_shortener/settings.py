@@ -69,7 +69,6 @@ AUTH_USER_MODEL = 'user.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware",
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -87,7 +86,6 @@ REST_AUTH_SERIALIZERS = {
 
 }
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 REST_FRAMEWORK = {
 
@@ -172,11 +170,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
-HOST_URL = 'http://127.0.0.1:8000'
+# HOST_URL = 'http://127.0.0.1:8000'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -219,3 +215,4 @@ SIMPLE_JWT = {
 }
 
 django_heroku.settings(locals())
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
