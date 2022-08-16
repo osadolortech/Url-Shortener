@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 from decouple import config
-import os
 import dj_database_url
 from datetime import timedelta
 import django_heroku
@@ -169,8 +168,6 @@ ALLOWED_HOSTS = ["*"]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = 'static/'
-
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 HOST_URL = 'http://127.0.0.1:8000'
 
