@@ -172,7 +172,7 @@ STATIC_URL = 'static/'
 
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
-# HOST_URL = 'http://127.0.0.1:8000'
+HOST_URL = 'http://127.0.0.1:8000'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
