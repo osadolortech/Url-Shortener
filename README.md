@@ -18,6 +18,7 @@ windows source .\venv\Scripts\activate pip install -r requirements.txt
 
 Application Backend
 https://robot-shortener.herokuapp.com/dj-rest-auth/registration/
+
 https://robot-shortener.herokuapp.com/api
 
 Prerequisites
