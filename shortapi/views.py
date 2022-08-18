@@ -10,6 +10,9 @@ class ShortenerView(viewsets.ModelViewSet):
     queryset = Link.objects.all()
     serializer_class = LinkSerializer
 
+    def perform_create(self, serializer):
+        return serializer.save(user=self.request.user)
+
 
 class Redirector(View):
     def get(self,request, shorten_url,*args,**kwargs):

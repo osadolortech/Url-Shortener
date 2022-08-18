@@ -5,7 +5,7 @@ from user.models import User
 
 
 class LinkSerializer(serializers.ModelSerializer):
-    # user = serializers.ReadOnlyField(source="user.email")
+    user = serializers.ReadOnlyField(source="user.email")
     class Meta:
         model=Link
         fields = "__all__"
